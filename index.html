@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Sharing Decision Helper (No-JS)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+    .app {
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 24px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    h1 { margin-top: 0; font-size: 1.6rem; }
+    details {
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 1px solid #e5e5e5;
+      padding: 8px 12px;
+      background: #fafafa;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .risk {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .risk-low  { background:#ecfdf3; color:#166534; }
+    .risk-med  { background:#fef9c3; color:#854d0e; }
+    .risk-high { background:#fee2e2; color:#991b1b; }
+    .note {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>Data Sharing Decision Helper</h1>
+
+    <!-- STEP 1 -->
+    <details open>
+      <summary>Step 1 — What are you planning to share?</summary>
+
+      <details>
+        <summary>Option A — Low-detail content</summary>
+        <p>Examples:</p>
+        <ul>
+          <li>Selfie at your poster</li>
+          <li>Glossy/blurred poster where text is unreadable</li>
+          <li>Room/venue photos, general vibes</li>
+        </ul>
+        <div class="risk risk-low">Low risk</div>
+        <p><strong>Guidance:</strong></p>
+        <ul>
+          <li>Safe to share on social media.</li>
+          <li>Optional courtesy: tell PI if poster is in background.</li>
+          <li>Avoid zooming in to make data readable.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Option B — High-detail content</summary>
+        <p>Examples:</p>
+        <ul>
+          <li>Clean PDF of poster</li>
+          <li>Readable data/figures</li>
+          <li>Slides, code, notebooks</li>
+          <li>Datasets or volumes</li>
+        </ul>
+        <p>→ Continue to Step 2 below.</p>
+      </details>
+
+    </details>
+
+    <!-- STEP 2 -->
+    <details>
+      <summary>Step 2 — Is there any written rule or policy about this?</summary>
+
+      <details>
+        <summary>2A — Yes, there is a written rule.</summary>
+        <p>Go to Step 3.</p>
+      </details>
+
+      <details>
+        <summary>2B — No rule / Not sure / Vague.</summary>
+        <p>Treat as unclear → Go to Step 4 (ownership).</p>
+      </details>
+
+    </details>
+
+    <!-- STEP 3 -->
+    <details>
+      <summary>Step 3 — If a rule exists, does it clearly allow this?</summary>
+
+      <details>
+        <summary>3A — Yes, the rule clearly allows this.</summary>
+        <div class="risk risk-low">Low risk</div>
+        <p><strong>Guidance:</strong></p>
+        <ul>
+          <li>Share is allowed (explicit policy).</li>
+          <li>Acknowledge collaborators / facilities.</li>
+          <li>Save a copy/screenshot of the rule.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>3B — No / ambiguous / full of wiggle words.</summary>
+        <p>Treat as unclear → Go to Step 4.</p>
+      </details>
+
+    </details>
+
+    <!-- STEP 4 -->
+    <details>
+      <summary>Step 4 — Who owns / controls this content?</summary>
+
+      <details>
+        <summary>4A — Only you (no core data, no collaborators, no human/industry data).</summary>
+        <div class="risk risk-med">Medium risk</div>
+        <p><strong>Guidance:</strong></p>
+        <ul>
+          <li>Send one short timestamped message:</li>
+          <li style="list-style:none;"><em>“I plan to upload X to Y on &lt;date&gt;. Any objections?”</em></li>
+          <li>If no objection, and no policy says otherwise → safe to proceed.</li>
+          <li>Keep that message as proof of good faith.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>4B — Shared control (PI, collaborators, core facility, funder, human/clinical).</summary>
+        <div class="risk risk-high">High risk</div>
+        <p><strong>Guidance:</strong></p>
+        <ul>
+          <li>Do <strong>not</strong> share without explicit written approval.</li>
+          <li>If approval denied → don't post.</li>
+          <li>If needed for portfolio → consider redacted/synthetic versions.</li>
+        </ul>
+      </details>
+
+    </details>
+
+    <p class="note">
+      This is a decision aid, not legal advice.  
+      Medium/high risk → always document that you asked, and wait for clear approval.
+    </p>
+
+  </div>
+</body>
+</html>
